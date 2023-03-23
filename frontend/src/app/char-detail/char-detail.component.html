@@ -1,0 +1,20 @@
+<mat-toolbar color="primary">
+    <div>東方Projectキャラクター図鑑</div>
+    <span>ユーザー名：{{this.loginName}}</span>
+</mat-toolbar>
+
+<mat-card *ngIf="name" class="details">
+    <img src="/assets/{{name}}.png" alt="" />
+    <p>{{title}}</p>
+    <p>{{name}}</p>
+    <p>{{race}}</p>
+    <p>{{ability1}}</p>
+    <p>{{ability2}}</p>
+    <p>{{deital}}</p>
+</mat-card>
+
+<section method="post">
+    <div class="example-button-row">
+        <button (click)="back()" mat-raised-button color="primary">戻る</button>
+    </div>
+</section>

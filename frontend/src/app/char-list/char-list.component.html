@@ -1,0 +1,67 @@
+<router-outlet></router-outlet>
+<mat-toolbar color="primary">
+  <div>東方Projectキャラクター図鑑</div>
+  <span>ユーザー名：{{this.LoginName}}</span>
+</mat-toolbar>
+
+<h4></h4>
+<mat-form-field appearance="fill" class="select">
+  <mat-label>選択してください</mat-label>
+  <mat-select [(ngModel)]="selectedBox">
+    <mat-option *ngFor="let char of chartitle" [value]="char">
+      <option value="">{{char}}</option>
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+<section method="post">
+  <div class="example-button-row">
+    <button (click)="onSubmitfilter()" mat-raised-button color="primary">検索</button>
+  </div>
+</section>
+
+
+<table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+  <ng-container matColumnDef="title">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> タイトル </th>
+    <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> 名前 </th>
+    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="race">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> 種族 </th>
+    <td mat-cell *matCellDef="let element"> {{element.race}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="ability1">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> 能力１ </th>
+    <td mat-cell *matCellDef="let element"> {{element.ability1}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="ability2">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> 能力２ </th>
+    <td mat-cell *matCellDef="let element"> {{element.ability2}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="getdetails">
+    <th mat-header-cell *matHeaderCellDef> 詳細</th>
+    <td mat-cell *matCellDef="let element"> <button mat-raised-button color="primary"
+        (click)="getRecord(element.name)">キャラ詳細</button> </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+<h5>{{message}} 検索件数：{{count}}件</h5>
+
+
+<section method="post">
+  <div class="example-button">
+    <button (click)="logout()" mat-raised-button color="primary">ログアウト</button>
+  </div>
+</section>

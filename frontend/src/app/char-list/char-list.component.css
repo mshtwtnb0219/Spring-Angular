@@ -1,0 +1,67 @@
+div {
+  position: relative;
+
+}
+
+div.example-button {
+  position: relative;
+  left: 1350px;
+  bottom: 1px;
+  margin-right: 8px;
+}
+
+p {
+  position: absolute;
+  right: 0;
+}
+
+span {
+  position: absolute;
+  top: 30px;
+  right: 250px;
+}
+
+table {
+  width: 100%;
+}
+
+div.example-button-row {
+  position: relative;
+  left: 1350px;
+  bottom: 60px;
+  margin-right: 8px;
+}
+
+mat-form-field.select {
+  position: relative;
+  left: 1130px;
+  top: 1px;
+
+}
+
+
+.container {
+  height: 400px;
+  width: 80%;
+  overflow: auto;
+  margin: auto;
+}
+
+table {
+  position: relative;
+  width: 90%;
+  bottom: 50px;
+  top: px;
+
+  margin: 3px auto;
+}
+
+.header-row {
+  background-color: rgb(179, 207, 209);
+}
+
+h5 {
+  position: relative;
+  left: 1000px;
+
+}
